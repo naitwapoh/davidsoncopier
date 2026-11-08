@@ -152,6 +152,34 @@ function switchTab(tabId) {
   document.querySelectorAll(".tab-pane").forEach(pane => pane.classList.remove("active"));
   const activePane = document.getElementById(`tab-${tabId}`);
   if (activePane) activePane.classList.add("active");
+
+  // Auto-close mobile drawer after tab switch on phones
+  const sidebar = document.querySelector(".sidebar");
+  const backdrop = document.getElementById("sidebar-backdrop");
+  if (sidebar && sidebar.classList.contains("open")) {
+    sidebar.classList.remove("open");
+  }
+  if (backdrop && backdrop.classList.contains("show")) {
+    backdrop.classList.remove("show");
+  }
+}
+
+// ==================== MOBILE NAVIGATION ====================
+function toggleLandingNav() {
+  const nav = document.querySelector(".landing-nav");
+  if (nav) nav.classList.toggle("nav-open");
+}
+
+function closeLandingNav() {
+  const nav = document.querySelector(".landing-nav");
+  if (nav) nav.classList.remove("nav-open");
+}
+
+function toggleMobileSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const backdrop = document.getElementById("sidebar-backdrop");
+  if (sidebar) sidebar.classList.toggle("open");
+  if (backdrop) backdrop.classList.toggle("show");
 }
 
 // ==================== AUTH ACTIONS ====================
