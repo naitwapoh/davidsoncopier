@@ -245,20 +245,20 @@ svg.lucide {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 20px;
   padding: 6px 12px;
   margin: 14px 0 10px 0;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #065f46;
+  color: #34d399;
 }
 
 .vip-badge-pill i {
   width: 15px;
   height: 15px;
-  color: #059669;
+  color: #10b981;
 }
 
 .nav-menu {
@@ -304,7 +304,7 @@ svg.lucide {
 
 .nav-item:hover {
   color: var(--text-main);
-  background-color: #f1f5f9;
+  background-color: #1a2540;
 }
 
 .nav-item:hover i {
@@ -312,8 +312,8 @@ svg.lucide {
 }
 
 .nav-item.active {
-  color: var(--emerald-deep);
-  background-color: #ecfdf5;
+  color: #34d399;
+  background-color: rgba(16, 185, 129, 0.12);
   font-weight: 700;
 }
 
@@ -336,11 +336,11 @@ svg.lucide {
   margin-left: auto;
   font-size: 0.7rem;
   font-weight: 700;
-  background: #ecfdf5;
-  color: #065f46;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
   padding: 2px 8px;
   border-radius: 12px;
-  border: 1px solid #a7f3d0;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .server-status-card {
@@ -909,12 +909,12 @@ svg.lucide {
 }
 
 .modal {
-  background-color: #ffffff;
+  background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 25px 60px -5px rgba(0, 0, 0, 0.6), 0 10px 20px -5px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   animation: modalIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -934,7 +934,7 @@ svg.lucide {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #ffffff;
+  background: var(--bg-card);
 }
 
 .modal-header h3 {
@@ -974,7 +974,7 @@ svg.lucide {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  background: #f8fafc;
+  background: var(--bg-secondary);
 }
 
 .form-group {
@@ -992,8 +992,8 @@ svg.lucide {
 }
 
 .form-control {
-  background-color: #ffffff;
-  border: 1.5px solid #cbd5e1;
+  background-color: var(--bg-secondary);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-sm);
   padding: 11px 15px;
   color: var(--text-main);
@@ -1058,9 +1058,9 @@ svg.lucide {
   display: flex;
 }
 
-/* ==================== LANDING PAGE (WHITE & GREEN THEME) ==================== */
+/* ==================== LANDING PAGE ==================== */
 #view-landing {
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   overflow-y: auto;
   height: 100vh;
 }
@@ -1147,18 +1147,18 @@ svg.lucide {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
   border-radius: 30px;
   padding: 7px 18px;
   margin-bottom: 1.5rem;
   font-size: 0.78rem;
   font-weight: 700;
-  color: #065f46;
+  color: #34d399;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   animation: floatBadge 3.5s ease-in-out infinite;
-  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
 }
 
 @keyframes floatBadge {
@@ -1205,11 +1205,11 @@ svg.lucide {
   gap: 14px;
   width: 100%;
   max-width: 920px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: 14px;
   padding: 1.35rem 1.6rem;
-  box-shadow: 0 6px 25px -4px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 6px 25px -4px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
@@ -1229,7 +1229,7 @@ svg.lucide {
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  border-right: 1px solid #f1f5f9;
+  border-right: 1px solid var(--border-divider);
   text-align: left;
 }
 
@@ -1240,13 +1240,13 @@ svg.lucide {
 .ribbon-item strong {
   display: block;
   font-size: 0.88rem;
-  color: #0f172a;
+  color: var(--text-main);
   font-weight: 700;
 }
 
 .ribbon-item span {
   font-size: 0.74rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 500;
 }
 
@@ -1265,7 +1265,7 @@ svg.lucide {
 }
 
 .landing-section.bg-alt {
-  background-color: #f8fafc;
+  background-color: var(--bg-secondary);
   max-width: 100%;
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
@@ -1316,15 +1316,15 @@ svg.lucide {
 }
 
 .feature-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
   padding: 2.2rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 14px;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
 }
 
 .feature-card:hover {
@@ -1348,21 +1348,21 @@ svg.lucide {
 }
 
 .feature-icon.emerald {
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .feature-icon.cyan {
-  background: #eff6ff;
-  color: #1e40af;
-  border: 1px solid #bfdbfe;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
 .feature-icon.gold {
-  background: #fffbeb;
-  color: #92400e;
-  border: 1px solid #fde68a;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
 .feature-card h3 {
@@ -1387,12 +1387,12 @@ svg.lucide {
 }
 
 .step-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
   padding: 2.25rem 1.75rem;
   position: relative;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1406,7 +1406,7 @@ svg.lucide {
   font-family: var(--font-heading);
   font-size: 2.6rem;
   font-weight: 900;
-  color: #e2e8f0;
+  color: var(--border-subtle);
   position: absolute;
   top: 1rem;
   right: 1.25rem;
@@ -1437,13 +1437,13 @@ svg.lucide {
 }
 
 .pricing-card {
-  background: #ffffff;
+  background: var(--bg-card);
   border: 2px solid #10b981;
   border-radius: var(--radius-lg);
   padding: 3rem 2.5rem;
   width: 100%;
   position: relative;
-  box-shadow: 0 12px 35px -5px rgba(16, 185, 129, 0.18);
+  box-shadow: 0 12px 35px -5px rgba(16, 185, 129, 0.25);
   display: flex;
   flex-direction: column;
   transition: all 0.25s ease;
@@ -1536,7 +1536,7 @@ svg.lucide {
   border-top: 1px solid var(--border-subtle);
   padding: 2.5rem 2rem;
   text-align: center;
-  background: #ffffff;
+  background: var(--bg-secondary);
 }
 
 .footer-content {
@@ -1555,7 +1555,7 @@ svg.lucide {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 4px;
-  background-color: #f1f5f9;
+  background-color: var(--bg-secondary);
   border-radius: var(--radius-sm);
   margin: 0.5rem 1.5rem 0 1.5rem;
 }
@@ -1573,8 +1573,8 @@ svg.lucide {
 }
 
 .auth-tab-btn.active {
-  background: #ffffff;
-  color: #059669;
+  background: var(--bg-card);
+  color: #34d399;
   box-shadow: var(--shadow-sm);
 }
 
@@ -1598,7 +1598,7 @@ svg.lucide {
     padding: 1.25rem 0 0.5rem 0;
     border-top: 1px solid var(--border-divider);
     margin-top: 10px;
-    background: #ffffff;
+    background: var(--bg-secondary);
   }
 
   .landing-nav.nav-open .nav-links {

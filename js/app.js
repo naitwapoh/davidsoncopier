@@ -37,7 +37,7 @@ function showView(viewName) {
 
 async function checkAuthAndLoad() {
   try {
-    const res = await fetch(apiUrl("/api/auth/me", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/auth/me"), { headers: getAuthHeaders() });
     if (res.ok) {
       currentUser = await res.json();
       setupDashboardForUser(currentUser);
@@ -216,7 +216,7 @@ async function handleLoginSubmit(e) {
     formData.append("username", username);
     formData.append("password", password);
 
-    const res = await fetch(apiUrl("/api/auth/token", {
+    const res = await fetch(apiUrl("/api/auth/token"), {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: formData
@@ -256,7 +256,7 @@ async function handleRegisterSubmit(e) {
   };
 
   try {
-    const res = await fetch(apiUrl("/api/auth/register", {
+    const res = await fetch(apiUrl("/api/auth/register"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -339,7 +339,7 @@ async function loadDashboardData() {
 // ==================== CLIENT SPECIFIC DATA ====================
 async function loadClientAccountView() {
   try {
-    const res = await fetch(apiUrl("/api/accounts/slave", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/accounts/slave"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const accounts = await res.json();
 
@@ -425,7 +425,7 @@ async function loadClientAccountView() {
 // ==================== ADMIN SPECIFIC DATA ====================
 async function loadPendingAccounts() {
   try {
-    const res = await fetch(apiUrl("/api/accounts/pending", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/accounts/pending"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const pending = await res.json();
 
@@ -467,7 +467,7 @@ async function loadPendingAccounts() {
 async function approveAccount(id) {
   if (!confirm("Confirm payment received and approve this MT5 subscriber account for live copying?")) return;
   try {
-    const res = await fetch(apiUrl(`/api/accounts/slave/${id}/approve`, {
+    const res = await fetch(apiUrl(`/api/accounts/slave/${id}/approve`), {
       method: "POST",
       headers: getAuthHeaders()
     });
@@ -486,7 +486,7 @@ async function approveAccount(id) {
 async function rejectAccount(id) {
   if (!confirm("Are you sure you want to reject this subscriber's application?")) return;
   try {
-    const res = await fetch(apiUrl(`/api/accounts/slave/${id}/reject`, {
+    const res = await fetch(apiUrl(`/api/accounts/slave/${id}/reject`), {
       method: "POST",
       headers: getAuthHeaders()
     });
@@ -502,7 +502,7 @@ async function rejectAccount(id) {
 
 async function loadAdminFollowers() {
   try {
-    const res = await fetch(apiUrl("/api/accounts/slave", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/accounts/slave"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const accounts = await res.json();
 
@@ -543,7 +543,7 @@ async function loadAdminFollowers() {
 
 async function loadAdminMasters() {
   try {
-    const res = await fetch(apiUrl("/api/accounts/master", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/accounts/master"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const masters = await res.json();
 
@@ -573,7 +573,7 @@ async function loadAdminMasters() {
 
 async function loadActivePositions() {
   try {
-    const res = await fetch(apiUrl("/api/trades/active", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/trades/active"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const trades = await res.json();
 
@@ -603,7 +603,7 @@ async function loadActivePositions() {
 
 async function loadTradeLogs() {
   try {
-    const res = await fetch(apiUrl("/api/trades/logs?limit=30", { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl("/api/trades/logs?limit=30"), { headers: getAuthHeaders() });
     if (!res.ok) return;
     const logs = await res.json();
 
@@ -717,7 +717,7 @@ async function submitAddAccount(e) {
 async function deleteAccount(id) {
   if (!confirm("Are you sure you want to remove this account?")) return;
   try {
-    await fetch(apiUrl(`/api/accounts/slave/${id}`, {
+    await fetch(apiUrl(`/api/accounts/slave/${id}`), {
       method: "DELETE",
       headers: getAuthHeaders()
     });
@@ -750,7 +750,7 @@ async function submitAddMaster(e) {
   };
 
   try {
-    const res = await fetch(apiUrl("/api/accounts/master", {
+    const res = await fetch(apiUrl("/api/accounts/master"), {
       method: "POST",
       headers: getAuthHeaders(),
       body: JSON.stringify(payload)
@@ -776,7 +776,7 @@ async function submitAddMaster(e) {
 async function deleteMasterAccount(id) {
   if (!confirm("Are you sure you want to delete this master account?")) return;
   try {
-    await fetch(apiUrl(`/api/accounts/master/${id}`, {
+    await fetch(apiUrl(`/api/accounts/master/${id}`), {
       method: "DELETE",
       headers: getAuthHeaders()
     });
@@ -790,7 +790,7 @@ async function deleteMasterAccount(id) {
 async function openSettingsModal(slaveId) {
   document.getElementById("setting-slave-id").value = slaveId;
   try {
-    const res = await fetch(apiUrl(`/api/accounts/slave/${slaveId}/settings`, { headers: getAuthHeaders() });
+    const res = await fetch(apiUrl(`/api/accounts/slave/${slaveId}/settings`), { headers: getAuthHeaders() });
     if (res.ok) {
       const s = await res.json();
       document.getElementById("set-risk-mode").value = s.risk_mode;
@@ -829,7 +829,7 @@ async function submitSettings(e) {
   };
 
   try {
-    const res = await fetch(apiUrl(`/api/accounts/slave/${slaveId}/settings`, {
+    const res = await fetch(apiUrl(`/api/accounts/slave/${slaveId}/settings`), {
       method: "PUT",
       headers: getAuthHeaders(),
       body: JSON.stringify(payload)
