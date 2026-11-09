@@ -229,11 +229,17 @@ async function handleLoginSubmit(e) {
       closeAuthModal();
       await checkAuthAndLoad();
     } else {
-      const err = await res.json();
-      alert("Sign In Failed: " + (err.detail || "Invalid credentials"));
+      let msg = "Invalid credentials";
+      try {
+        const err = await res.json();
+        msg = err.detail || msg;
+      } catch (_) {
+        msg = (res.status === 404) ? "Backend server offline. Please start start_davidsonsfx.bat" : "Server returned status " + res.status;
+      }
+      alert("Sign In Failed: " + msg);
     }
   } catch (err) {
-    alert("Connection Error: " + err.message);
+    alert("Connection Notice: " + (err.message || "Cannot connect to server. Ensure start_davidsonsfx.bat is running."));
   } finally {
     btn.disabled = false;
     btn.textContent = "Sign In to Dashboard";

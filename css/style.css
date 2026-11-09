@@ -1070,8 +1070,8 @@ svg.lucide {
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 4rem;
-  background-color: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 14, 23, 0.95);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
